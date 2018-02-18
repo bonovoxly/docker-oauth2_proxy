@@ -1,0 +1,19 @@
+version: 2
+jobs:
+ build:
+   machine: true
+   steps:
+     - checkout
+     # start proprietary DB using private Docker image
+     # with credentials stored in the UI
+     - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+
+     # build the application image
+     - run: |
+         docker build -t bcawthra/oauth2_proxy:${CIRCLE_BUILD_NUM} .
+         docker tag bcawthra/oauth2_proxy:${CIRCLE_BUILD_NUM} bcawthra/oauth2_proxy:latest
+
+     # deploy the image
+     - run: |
+         docker push bcawthra/oauth2_proxy:${CIRCLE_BUILD_NUM}
+         docker push bcawthra/oauth2_proxy:latest
