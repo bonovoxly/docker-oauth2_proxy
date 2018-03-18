@@ -1,6 +1,6 @@
 # docker-oauth2_proxy
 
-This project builds a Docker image for [oauth2_proxy](https://github.com/bitly/oauth2_proxy).  It's particularly made to be used with Kubernetes. Based off the Dockerfile found [here}(https://hub.docker.com/r/machinedata/oauth2_proxy/).
+This project builds a Docker image for [oauth2_proxy](https://github.com/bitly/oauth2_proxy).  It's particularly made to be used with Kubernetes. Based off the Dockerfile found [here](https://hub.docker.com/r/machinedata/oauth2_proxy/).
 
 # To Build
 
